@@ -27,6 +27,7 @@ If you wish to assist in different aspects (Data Engineering / Data Science / De
 ### Installation and Setup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+If you don't wish to fork and edit it in your computer, try editing at it online (!) using [stackblitz.com](https://stackblitz.com/github/liadmagen/Keep-Current-App)
 
 ### Development server
 
