@@ -13,3 +13,5 @@ install:
   - npm install
 script:
   - ng build --prod
+notifications:
+  slack: vdsg:YeRk6YBgJuTEtaRT1pPp76pb
