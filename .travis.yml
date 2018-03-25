@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+   - "7"
+branches:
+    only:
+       - master
+cache:
+  directories:
+    - "node_modules"
+before_script:
+  - npm install -g @angular/cli
+install:
+  - npm install
+script:
+  - ng build --prod
