@@ -29,6 +29,8 @@ If you wish to assist in different aspects (Data Engineering / Data Science / De
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 If you don't wish to fork and edit it in your computer, try editing at it online (!) using [stackblitz.com](https://stackblitz.com/github/liadmagen/Keep-Current-App)
 
+Using a mac? If installing the angular doesn't work well, you might find  [this link](https://docs.npmjs.com/getting-started/fixing-npm-permissions) usefull.
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
