@@ -21,15 +21,17 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "auth0-js": "^9.4.2",
     "@ng-bootstrap/ng-bootstrap": "^1.1.0",
+    "auth0-js": "^9.4.2",
     "bootswatch": "^4.0.0",
     "core-js": "^2.4.1",
+    "eslint": "^4.19.1",
+    "npm": "^5.8.0",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.25"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.7",
+    "@angular/cli": "^1.7.4",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
