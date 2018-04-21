@@ -10,7 +10,7 @@ The Keep-Current project's target is to assist with the problem of finding and r
 
 This repository includes the GUI part of the Keep-Current project: An app where the users can log on, see and react to their recommendations, thus adapting the model to their preferences. This is also our gate for conducting A/B testings on both UI and our models.
 
-For more information about Keep-Current project, please refer to [the main repository](https://github.com/liadmagen/Keep-Current/).
+For more information about Keep-Current project, please refer to [the main repository](https://github.com/Keep-Current/Keep-Current/).
 
 ## How you can help
 
@@ -20,7 +20,7 @@ If you would like to assist, we would like to encourage you to:
 
 * Try it out and report us issues
 * Read our [Contribution Guide](CONTRIBUTING.md)
-* Dive into our Project [Backlog](https://github.com/liadmagen/Keep-Current-Site/projects)
+* Dive into our Project [Backlog](https://github.com/Keep-Current/Keep-Current-Site/projects)
 
 If you wish to assist in different aspects (Data Engineering / Data Science / DevOps), we have divided the project to several additional repositories focusing on these topics.
 
