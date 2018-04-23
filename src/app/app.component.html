@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">
-    <img height="40" alt="Keep Current" src="assets/logo/KC_logo.svg"></a>
+    <img height="60" alt="Keep Current" src="assets/logo/keepCurrentLogo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,15 +18,18 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <button class="btn btn-primary btn-margin" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
-          Log In
-        </button>
-        <button class="btn btn-primary btn-margin" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
-          Log Out
-        </button>
+      <li class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
+        <a class="nav-link" href="/login">Log In</a>
       </li>
 
+      <ng-template #notAuthenticatedBlock>
+        <li>
+          <button class="btn btn-primary btn-margin" (click)="auth.logout()">
+          Log Out
+        </button>
+        </li>
+      </ng-template>
+              
       <li class="nav-item">
         <a class="nav-link" href="/about">About Us</a>
       </li>

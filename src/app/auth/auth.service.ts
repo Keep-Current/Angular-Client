@@ -1,24 +1,57 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AUTH_CONFIG } from './auth0-variables';
 import * as auth0 from 'auth0-js';
 
 @Injectable()
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: 'YiWI6rmDX56tO72HSHmaoMOm5aExw6bG',
-    domain: 'keepcurrent.eu.auth0.com',
+    clientID: AUTH_CONFIG.clientID,
+    domain: AUTH_CONFIG.domain,
     responseType: 'token id_token',
-    audience: 'https://keepcurrent.eu.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    audience: 'https://${AUTH_CONFIG.domain}/userinfo',
+    redirectUri: AUTH_CONFIG.callbackURL,
     scope: 'openid'
   });
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
-  public login(): void {
-    this.auth0.authorize();
+  public login(username: string, password: string): void {
+    this.auth0.login({
+      realm: 'Username-Password-Authentication',
+      username,
+      password
+    }, (err, authResult) => {
+      if (err) {
+        console.log(err);
+        alert(`Error: ${err.errorDescription}. Check the console for further details.`);
+        return;
+      } else if (authResult && authResult.accessToken && authResult.idToken) {
+        this.setSession(authResult);
+      }
+    });
+  }
+
+  public signup(email: string, password: string): void {
+    this.auth0.redirect.signupAndLogin({
+      connection: 'Username-Password-Authentication',
+      email,
+      password,
+    }, err => {
+      if (err) {
+        console.log(err);
+        alert(`Error: ${err.description}. Check the console for further details.`);
+        return;
+      }
+    });
+  }
+
+  public loginWithGoogle(): void {
+    this.auth0.authorize({
+      connection: 'google-oauth2',
+    });
   }
 
   public handleAuthentication(): void {
@@ -34,7 +67,7 @@ export class AuthService {
     });
   }
 
-  private setSession(authResult): void {
+  private setSession(authResult: any): void {
     // Set the time that the Access Token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
