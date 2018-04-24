@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { RegisterComponent } from './register/register.component';
+import { AuthModule } from './auth/auth.module';
 
-import { AuthService } from './auth/auth.service';
+import { PageNotFoundComponent } from './not-found.component';
+import { AppComponent } from './app.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AboutUsComponent, RegisterComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [AuthService],
+  declarations: [PageNotFoundComponent, AppComponent, AboutUsComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AuthModule, AppRoutingModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

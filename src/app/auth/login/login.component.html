@@ -1,0 +1,24 @@
+<div class="text-center">
+
+  <form class="form-signin">
+    <img class="mb-4" src="assets/Keep-Current-logo.png" alt="" width="72" height="72">
+
+    <div>
+      <button class="btn btn-secondary signin-google" (click)="loginWithGoogle()">Sign in with Google</button>
+    </div>
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label class="">Email address
+      <input type="email" class="form-control" placeholder="your@email.com" #email (ngModel)="email" required autofocus>
+    </label>
+    <label for="password" class="">Password
+      <input type="password" class="form-control" placeholder="Password" #password (ngModel)="password" required>
+    </label>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me" #remember (ngModel)="remember"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block signin-db" type="submit" (click)="login()">Sign in</button>
+  </form>
+</div>

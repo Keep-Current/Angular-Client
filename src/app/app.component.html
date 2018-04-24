@@ -12,14 +12,12 @@
       <!--
         ToDo: replace this with a *ngFor
       -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
       </li>
 
       <li class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
-        <a class="nav-link" href="/login">Log In</a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
       </li>
 
       <ng-template #notAuthenticatedBlock>
@@ -31,7 +29,7 @@
       </ng-template>
               
       <li class="nav-item">
-        <a class="nav-link" href="/about">About Us</a>
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
       </li>
     </ul>
   </div>
