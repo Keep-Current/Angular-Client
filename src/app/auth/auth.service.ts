@@ -54,6 +54,12 @@ export class AuthService {
     });
   }
 
+  public loginWithGithub(): void {
+    this.auth0.authorize({
+      connection: 'github-oauth2',
+    });
+  }
+
   public handleAuthentication(): void {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
