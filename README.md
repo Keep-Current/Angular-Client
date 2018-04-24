@@ -1,7 +1,7 @@
 # KeepCurrent - UI/UX and User Space
 
 <!-- Badges section here. -->
-[![Build Status](https://img.shields.io/travis/liadmagen/Keep-Current-App/master.svg?label=travis)][travis-badge-url]
+[![Build Status](https://travis-ci.org/Keep-Current/WebApp.svg?branch=master)](https://travis-ci.org/Keep-Current/WebApp)
 [![Dependency Status][david-badge]][david-badge-url]
 
 ## What is Keep-Current
