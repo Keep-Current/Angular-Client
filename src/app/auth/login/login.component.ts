@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.auth.loginWithGithub();
   }
 
-  login(email: string, password: string, remember: boolean) {
+  login(email: string, password: string, remember: boolean = false) {
     this.auth.login(email, password);
   }
 }
