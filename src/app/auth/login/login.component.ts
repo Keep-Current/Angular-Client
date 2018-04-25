@@ -10,10 +10,6 @@ export class LoginComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
 
-  email: string;
-  password: string;
-  remember: string;
-
   ngOnInit() {
   }
 
@@ -25,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.auth.loginWithGithub();
   }
 
-  login() {
-    this.auth.login(this.email, this.password);
+  login(email: string, password: string, remember: boolean) {
+    this.auth.login(email, password);
   }
 }

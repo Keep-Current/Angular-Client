@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CallbackComponent } from './callback/callback.component';
+
+import { EnforcePasswordPolicyDirective } from './register/enforce-password-policy.directive';
 
 import { AuthService } from './auth.service';
 
@@ -17,7 +20,9 @@ import { AuthRoutingModule } from './auth-routing.module';
     ],
     declarations: [
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        CallbackComponent,
+        EnforcePasswordPolicyDirective
     ],
     providers: [AuthService]
 })

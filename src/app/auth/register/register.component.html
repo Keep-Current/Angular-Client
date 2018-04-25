@@ -1,3 +1,47 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="text-center">
+
+    <div class="wrap-register">
+      <img class="mb-4" src="assets/logo/FF_150_centered.png" alt="" width="72" height="72">
+      <h1 class="h1 sign-in-title">Register</h1>
+
+      <form class="form-register" #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+        <div [hidden]="registrationForm.submitted">
+
+          <div class="form-group">
+              <input type="email" class="form-control" placeholder="your@email.com" #email required autofocus [(ngModel)]="model.email"
+                name="email" #name="ngModel">
+          </div>
+          <div class="form-group">
+              <input name="password" id="password" type="password" class="form-control" placeholder="Password" 
+              minlength="8" required [(ngModel)]="model.password" appEnforcePasswordPolicy
+                #password="ngModel">
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="password.errors.minlength">
+                The password must be at least 8 characters long.
+              </div>
+              <div *ngIf="password.errors.mixedLetters">
+                  The password must contain both small and cap letters.
+                </div>
+                <div *ngIf="password.errors.numericValues">
+                    The password must contain numbers.
+                  </div>
+                  <div *ngIf="password.errors.specialChars">
+                    The password must contain special characters.
+                  </div>
+              </div>
+
+          </div>
+          <button class="btn btn-lg btn-success btn-block signin-db" [disabled]="!registrationForm.form.valid" type="submit">Keep me current!</button>
+          <p>Already have an account? Please
+            <a routerLink="/login">log in</a>.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

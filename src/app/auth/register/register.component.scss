@@ -1,0 +1,21 @@
+.wrap-register {
+    max-width: 520px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 0em;
+}
+
+.form-register input {
+    width: 100%;
+    line-height: 2rem;
+    border-radius: 100px;
+    margin: 0.2rem 0.5rem;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

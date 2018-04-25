@@ -11,7 +11,7 @@ export class AuthService {
     clientID: AUTH_CONFIG.clientID,
     domain: AUTH_CONFIG.domain,
     responseType: 'token id_token',
-    audience: 'https://${AUTH_CONFIG.domain}/userinfo',
+    audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     redirectUri: AUTH_CONFIG.callbackURL,
     scope: 'openid'
   });
@@ -96,5 +96,9 @@ export class AuthService {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+  // public openUniversalLogin(): void {
+  //   this.auth0.authorize();
+  // }
 
 }
