@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { PublicModule } from './public/public.module';
 
 import { PageNotFoundComponent } from './not-found.component';
 import { AppComponent } from './app.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [PageNotFoundComponent, AppComponent, AboutUsComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AuthModule, AppRoutingModule],
+  declarations: [PageNotFoundComponent, AppComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AuthModule, PublicModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

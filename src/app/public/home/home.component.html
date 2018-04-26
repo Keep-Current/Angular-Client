@@ -1,0 +1,29 @@
+<section class="fullscreen">
+  <div class="section-overlay" style="opacity: 0.7; background-color: rgb(35, 35, 35);"></div>
+
+  <div class="container align-center">
+    <div class="row justify-content-md-center">
+      <div class="mbr-white col-md-10">
+        <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+          Keep Current</h1>
+        <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">
+          Get the latest news about
+
+          <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+              <div>{{ slide.topic }}</div>
+            </div>
+          </ngx-slick>
+
+        </h3>
+        <p class="mbr-text pb-3 mbr-fonts-style display-5">
+          Stay current with your profession by receiving newsletters containing brand new scientific papers and articles, personalized
+          to you
+        </p>
+        <div class="mbr-section-btn">
+          <a class="btn btn-md btn-secondary display-4" routerLink="/how">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

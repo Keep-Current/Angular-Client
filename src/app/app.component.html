@@ -9,12 +9,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <!--
-        TODO: replace this with a *ngFor
-      -->
+
       <li class="nav-item">
         <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
       </li>
+
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/how" routerLinkActive="active">How does it work?</a>
+        </li>
+
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+        </li>
+  
 
       <li class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
@@ -28,12 +35,7 @@
         </li>
       </ng-template>
               
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
-      </li>
     </ul>
   </div>
 </nav>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
