@@ -2,17 +2,21 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AUTH_CONFIG } from './auth0-variables';
+import { isDevMode } from '@angular/core';
+
 import * as auth0 from 'auth0-js';
 
 @Injectable()
 export class AuthService {
+
+  userProfile: any;
 
   auth0 = new auth0.WebAuth({
     clientID: AUTH_CONFIG.clientID,
     domain: AUTH_CONFIG.domain,
     responseType: 'token id_token',
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
-    redirectUri: AUTH_CONFIG.callbackURL,
+    redirectUri: isDevMode() ? AUTH_CONFIG.callbackUrlDev : AUTH_CONFIG.callbackUrlProd,
     scope: 'openid'
   });
 
@@ -65,7 +69,7 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       } else if (err) {
         this.router.navigate(['/home']);
         console.log(err);
@@ -97,8 +101,18 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
-  // public openUniversalLogin(): void {
-  //   this.auth0.authorize();
-  // }
+  public getProfile(cb: any): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access Token must exist to fetch profile');
+    }
 
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+  }
 }
