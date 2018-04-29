@@ -1,7 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">
-    <img width="150" alt="Keep Current" src="assets/logo/KeepCurrentLogo.png"></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
+  <a class="navbar-brand" href="#">
+    <img width="150" alt="Keep Current" src="assets/logo/KeepCurrentLogo.png">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,31 +12,40 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" routerLink="/how" routerLinkActive="active">How does it work?</a>
-        </li>
-
-      <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
-        </li>
-  
-
-      <li class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
+        <a class="nav-link" routerLink="/how" routerLinkActive="active">How does it work?</a>
       </li>
 
-      <ng-template #notAuthenticatedBlock>
-        <li>
-          <button class="btn btn-primary btn-margin" (click)="auth.logout()">
-          Log Out
-        </button>
-        </li>
-      </ng-template>
-              
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+      </li>
     </ul>
+
+    <span class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
+    </span>
+
+    <ng-template #notAuthenticatedBlock>
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/topic" routerLinkActive="active">Topics</a>
+            </li>
+          </ul>
+          
+        <form class="form-inline my-2 my-lg-0">
+            <span class="navbar-text"><a routerLink="/user">Welcome back! </a></span>
+            <button class="btn btn-success my-2 my-sm-0" (click)="auth.logout()">Log Out</button>
+          </form>
+    </ng-template>
+
   </div>
 </nav>
-<router-outlet></router-outlet>
+
+<section class="cover">
+  <app-alert></app-alert>
+  <router-outlet></router-outlet>
+</section>

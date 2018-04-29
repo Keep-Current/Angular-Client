@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-12">
+      <ul class="items">
+          <li *ngFor="let topic of topics$ | async"
+            [class.selected]="topic.id === selectedId">
+            <a [routerLink]="['/topic', topic.id]">
+              <span class="badge">{{ topic.id }}</span>{{ topic.name }}
+            </a>
+          </li>
+        </ul>
+
+        <a class="btn btn-success" [routerLink]="['edit']">Add a topic</a>
+  </div>
+  <div class="col-lg-9 col-md-8 col-sm-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>

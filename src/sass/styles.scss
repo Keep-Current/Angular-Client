@@ -37,6 +37,12 @@
     word-wrap: break-word;
   }
 
+  section.cover {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   a {
     font-style: normal;
     font-weight: 400;
@@ -284,7 +290,7 @@ nav .mbr-section-btn {
   padding: 1rem 3rem;
   border-radius: 3px;
 }
-
+/*
 .btn {
   font-weight: 500;
   border-width: 2px;
@@ -302,6 +308,7 @@ nav .mbr-section-btn {
   justify-content: center;
   word-break: break-word;
 }
+*/
 
 .mbr-light {
   font-weight: 300;

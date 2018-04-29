@@ -26,8 +26,18 @@ If you wish to assist in different aspects (Data Engineering / Data Science / De
 
 ### Installation and Setup
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
-If you don't wish to fork and edit it in your computer, try editing at it online (!) using [stackblitz.com](https://stackblitz.com/github/liadmagen/Keep-Current-App)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version >= 1.6.7.
+After cloning the project, please run:
+```
+npm install
+```
+
+following with installation of the angular-cli:
+```
+npm install -g @angular/cli
+```
+
+If you don't wish to fork and edit it in your computer, try editing at it online (!) using [stackblitz.com](https://stackblitz.com/github/keep-current/webApp)
 
 Using a mac? If installing the angular doesn't work well, you might find  [this link](https://docs.npmjs.com/getting-started/fixing-npm-permissions) usefull.
 

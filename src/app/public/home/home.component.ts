@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ScriptService } from './../script.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +7,7 @@ import { ScriptService } from './../script.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public script: ScriptService) {
-    script.load('slick').then((data: any) => {
-      console.log('script loaded ', data);
-    }).catch((error: any) => console.log(error));
+  constructor() {
   }
 
   slideConfig = {

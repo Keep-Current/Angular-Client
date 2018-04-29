@@ -9,6 +9,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { EnforcePasswordPolicyDirective } from './register/enforce-password-policy.directive';
 
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
 
 import { AuthRoutingModule } from './auth-routing.module';
 
@@ -24,6 +25,6 @@ import { AuthRoutingModule } from './auth-routing.module';
         CallbackComponent,
         EnforcePasswordPolicyDirective
     ],
-    providers: [AuthService]
+    providers: [AuthService, AuthGuard]
 })
 export class AuthModule { }

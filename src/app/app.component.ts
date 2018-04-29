@@ -11,5 +11,6 @@ export class AppComponent {
 
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
+    auth.scheduleRenewal();
   }
 }

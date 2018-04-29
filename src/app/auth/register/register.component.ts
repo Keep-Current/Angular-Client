@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
 
-  model = new UserRegistration(0, '', '', '', ['']);
+  model = new UserRegistration(0, '', '', '');
 
   submitted = false;
 

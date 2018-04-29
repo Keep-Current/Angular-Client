@@ -33,10 +33,10 @@ export class EnforcePasswordPolicyDirective implements Validator {
 
     validate(control: AbstractControl): { [key: string]: any } {
 
-        let msgs = {};
+        const msgs = {};
         let errors = 0;
-        for (let pat of this.passwordPatterns) {
-            let check = enforcePatternValidator(new RegExp(pat.pattern, 'i'))(control);
+        for (const pat of this.passwordPatterns) {
+            const check = enforcePatternValidator(new RegExp(pat.pattern, 'i'))(control);
             if (check !== null) {
                 errors++;
                 msgs[pat.message] = check.testNotPassed;

@@ -1,0 +1,12 @@
+<form #topicForm="ngForm">
+  <h3>Add a Topic</h3>
+
+  <input type="text" [(ngModel)]="topicName" name="topicName" placeholder="Topic name"/>
+
+  <input type="text" [(ngModel)]="exampleURL1" name="exampleURL1" placeholder="Example URL #1"/>
+  <input type="text" [(ngModel)]="exampleURL2" name="exampleURL2" placeholder="Example URL #2"/>
+  <input type="text" [(ngModel)]="exampleURL3" name="exampleURL3" placeholder="Example URL #3"/>
+
+  <button type="submit" class="btn btn-success" (click)="save()">Save</button>
+  <a class="btn btn-primary" (click)="cancel()">Cancel</a>
+</form>
