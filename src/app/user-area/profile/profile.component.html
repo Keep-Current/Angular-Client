@@ -1,0 +1,24 @@
+<section>
+  <div class="container">
+    <div class="media-container-row">
+      <div class="title col-12 col-md-8">
+
+        <div class="panel panel-default profile-area">
+          <div class="panel-heading">
+            <h3>Profile</h3>
+          </div>
+          <div class="panel-body">
+            <img src="{{profile?.picture}}" class="avatar" alt="avatar">
+            <div>
+              <label>
+                <i class="glyphicon glyphicon-user"></i> Nickname</label>
+              <h3 class="nickname">{{ profile?.nickname }}</h3>
+            </div>
+            <pre class="full-profile">{{ profile | json }}</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
