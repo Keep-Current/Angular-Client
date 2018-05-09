@@ -1,14 +1,5 @@
 @import url('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
-section {
-    background-image: url("/assets/images/coffee-tablet-headphones-work-163187-2000x1492.jpg");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%; 
-    width: 100%;
-}
-
 section h1 {
     text-align: center;
 }
@@ -37,12 +28,9 @@ section h1 {
     font-weight: 300;
 }
 
-.mbr-section-btn {
-    margin-left: -.25rem;
-    margin-right: -.25rem;
-    font-size: 0;
-}
-
 .mbr-section-btn a.btn:not(.btn-form) {
     border-radius: 100px;
+}
+.display-2 {
+    line-height: 1.3;
 }

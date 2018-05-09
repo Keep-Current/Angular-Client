@@ -20,11 +20,13 @@
       "prefix": "app",
       "stylePreprocessorOptions": {
         "includePaths": [
-          "../node_modules/bootstrap/scss"
+          "../node_modules/bootstrap/scss",
+          "sass/styles.scss"
         ]
       },
       "styles": [
-        "sass/styles.scss"
+        "sass/styles.scss",
+        "../node_modules/font-awesome/scss/font-awesome.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

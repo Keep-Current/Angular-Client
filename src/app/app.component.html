@@ -1,51 +1,60 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
-  <a class="navbar-brand" href="#">
-    <img width="150" alt="Keep Current" src="assets/logo/KeepCurrentLogo.png">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="main" [ngClass]="getMainClass()">
+  <div class="section-overlay"></div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
 
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-      </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="#">
+      <img width="150" alt="Keep Current" src="assets/logo/KeepCurrentLogo_pink.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/how" routerLinkActive="active">How does it work?</a>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
 
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
-      </li>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
 
-    <span class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/how" routerLinkActive="active">How does it work?</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+        </li>
+      </ul>
+
+      <span class="nav-item" *ngIf="!auth.isAuthenticated(); else notAuthenticatedBlock">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
-    </span>
+      </span>
 
-    <ng-template #notAuthenticatedBlock>
+      <ng-template #notAuthenticatedBlock>
         <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/topic" routerLinkActive="active">Topics</a>
-            </li>
-          </ul>
-          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/topic" routerLinkActive="active">Topics</a>
+          </li>
+        </ul>
+
         <form class="form-inline my-2 my-lg-0">
-            <span class="navbar-text"><a routerLink="/user">Welcome back! </a></span>
-            <button class="btn btn-success my-2 my-sm-0" (click)="auth.logout()">Log Out</button>
-          </form>
-    </ng-template>
+          <span class="navbar-text">
+            <a routerLink="/user">Welcome back! </a>
+          </span>
+          <button class="btn btn-success my-2 my-sm-0" (click)="auth.logout()">Log Out</button>
+        </form>
+      </ng-template>
 
-  </div>
-</nav>
+    </div>
+  </nav>
 
-<section class="cover">
-  <app-alert></app-alert>
-  <router-outlet></router-outlet>
-</section>
+  <div class="nav-separator"></div>
+
+  <main class="cover">
+    <app-alert></app-alert>
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

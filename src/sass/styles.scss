@@ -1,11 +1,10 @@
-@import "~bootswatch/dist/sandstone/_variables";
+@import './_variables';
 @import "~bootstrap/scss/bootstrap";
-@import "~bootswatch/dist/sandstone/_bootswatch";
+@import "./_bootswatch";
 @import "~bootswatch/dist/sandstone/bootstrap.min.css";
 
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i);
 
-@import './variables';
 @import './mixins';
 @import 
   'functions',
@@ -20,14 +19,11 @@
 }
 
   body {
-    background-color: #fff;
+    background-color: $white;
     color: #232323;
     font-style: normal;
     line-height: 1.5;  
-  }
-
-  section {
-    background-color: #eeeeee;
+    font-size: 1rem;
   }
   
   section,
@@ -41,6 +37,9 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    background-color: #eeeeee;
+    height: 100vh;
   }
 
   a {
@@ -103,22 +102,7 @@ h6,
   font-size: 1.5rem;
 }
 
-  .section-overlay {
-    background-color: rgb(35, 35, 35);
-    bottom: 0;
-    left: 0;
-    opacity: .7;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
-  }
-
-  .fullscreen .section-overlay {
-    min-height: 100vh;
-  }
-
-  .fullscreen {
+.fullscreen {
     display: flex;
     display: -webkit-flex;
     display: -moz-flex;
@@ -275,9 +259,9 @@ nav .mbr-section-btn {
 }
 
 .btn-secondary, .btn-secondary:active {
-  background-color: #ff3366 !important;
-  border-color: #ff3366 !important;
-  color: #ffffff !important;
+  background-color: $pink;
+  border-color: $pink;
+  color: #ffffff;
 }
 
 .btn-md {
@@ -316,4 +300,15 @@ nav .mbr-section-btn {
 
 .mbr-section-btn a.btn:not(.btn-form) {
   border-radius: 100px;
+}
+
+.mbr-section-subtitle {
+  color: $primary;
+  line-height: 1.3;
+}
+
+.btn-primary, .btn-primary:active {
+  background-color: $cyan;
+  border-color: $cyan;
+  color: $white;
 }

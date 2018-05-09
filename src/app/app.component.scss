@@ -22,3 +22,43 @@
   justify-content: center;
   word-break: break-word;
 }
+
+nav.navbar {
+  min-height: 100px;
+}
+
+.navbar-brand {
+  margin-right: 2rem;
+}
+
+.nav-separator {
+  background-color: $black;
+  height: 2px;
+  width: 100%;
+}
+
+main.cover {
+  padding-top: 2rem;
+}
+
+.home-fullscreen {
+  background-image: url("/assets/images/coffee-tablet-headphones-work-163187-2000x1492.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; 
+  width: 100%;
+}
+
+.home-fullscreen .section-overlay {
+    background-color: rgb(35, 35, 35);
+    bottom: 0;
+    left: 0;
+    opacity: .7;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    min-height: 100vh;
+  }
+
