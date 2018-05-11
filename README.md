@@ -1,6 +1,7 @@
 # KeepCurrent - UI/UX and User Space
 
 <!-- Badges section here. -->
+[![BCH compliance](https://bettercodehub.com/edge/badge/Keep-Current/WebApp?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/Keep-Current/WebApp.svg?branch=master)](https://travis-ci.org/Keep-Current/WebApp)
 [![Dependency Status][david-badge]][david-badge-url]
 
