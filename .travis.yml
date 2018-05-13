@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-   - "7"
+   - "8"
 branches:
     only:
        - master
@@ -15,3 +15,6 @@ script:
   - ng build --prod
 notifications:
   slack: vdsg:YeRk6YBgJuTEtaRT1pPp76pb
+addons:
+    apt:
+      update: true
