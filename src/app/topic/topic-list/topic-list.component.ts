@@ -1,9 +1,10 @@
-import 'rxjs/add/operator/switchMap';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Topic, TopicService } from '../topic.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable, pipe } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-topic-list',
@@ -21,11 +22,14 @@ export class TopicListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.topics$ = this.route.paramMap
-      .switchMap((params: ParamMap) => {
+    const routeParmaPipe = pipe(
+      switchMap((params: ParamMap) => {
         this.selectedId = +params.get('id');
         return this.service.getTopics();
-      });
+      })
+    );
+
+    this.topics$ = routeParmaPipe(this.route.paramMap);
   }
 
 }

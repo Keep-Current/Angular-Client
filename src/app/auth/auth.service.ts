@@ -1,10 +1,9 @@
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/observable/of';
-import { timer } from 'rxjs/observable/timer';
+
+
+import { timer, Observable, of, pipe } from 'rxjs';
+import { filter, flatMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { AUTH_CONFIG } from './auth0-variables';
 import { isDevMode } from '@angular/core';
 import { AlertService } from '../alert/alert.service';
@@ -27,7 +26,7 @@ export class AuthService {
     scope: 'openid email'
   });
 
-  constructor(public router: Router, public alert: AlertService) {}
+  constructor(public router: Router, public alert: AlertService) { }
 
   public login(username: string, password: string): void {
     this.auth0.login({
@@ -165,15 +164,16 @@ export class AuthService {
 
     const expiresAt = JSON.parse(window.localStorage.getItem('expires_at'));
 
-    const source = Observable.of(expiresAt).flatMap(
-      newExpiresAt => {
+    const source = of(expiresAt).pipe(
+      flatMap((newExpiresAt: any) => {
 
         const now = Date.now();
 
         // Use the delay in a timer to
         // run the refresh at the proper time
         return timer(Math.max(1, newExpiresAt - now));
-      });
+      })
+    );
 
     // Once the delay time from above is
     // reached, get a new JWT and schedule

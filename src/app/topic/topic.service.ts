@@ -1,17 +1,17 @@
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+
+import { BehaviorSubject, pipe } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class Topic {
   constructor(
-    public id: number,
     public name: string,
-    public urls?: Array<string>) { }
+    public urls?: Array<string>,
+    public id: number = -1) { }
 }
 
 const TOPICS = [
-  new Topic(1, 'Topic #1'),
-  new Topic(2, 'Topic #2'),
+  new Topic('Semantic Representation', [], 1)
 ];
 
 import { Injectable } from '@angular/core';
@@ -24,16 +24,21 @@ export class TopicService {
   getTopics() { return this.topics$; }
 
   getTopic(id: number | string) {
-    return this.getTopics()
-      .map(topics => topics.find(topic => topic.id === +id));
+    const filterPipe = pipe(
+      map((topics: Array<Topic>) => topics.find(topic => topic.id === +id))
+    );
+    const topicList = this.getTopics();
+    return filterPipe(topicList);
   }
 
-  addTopic(name: string) {
+  addTopic(name: string, urls?: Array<string>): Topic {
     name = name.trim();
     if (name) {
-      const topic = new Topic(TopicService.nextTopicId++, name);
+      const topic = new Topic(name, urls, TopicService.nextTopicId++);
       TOPICS.push(topic);
       this.topics$.next(TOPICS);
+      return topic;
     }
+    return null;
   }
 }

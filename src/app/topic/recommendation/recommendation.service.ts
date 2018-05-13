@@ -1,6 +1,6 @@
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+
+import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 export class Document {
