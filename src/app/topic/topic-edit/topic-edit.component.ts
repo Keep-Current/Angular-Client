@@ -1,9 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { slideInDownAnimation } from '../../animations';
-import { Topic } from '../topic.service';
+import { Topic, TopicService } from '../topic.service';
 
 @Component({
   selector: 'app-topic-edit',
@@ -23,8 +23,9 @@ export class TopicEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private topicService: TopicService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.data
@@ -41,7 +42,18 @@ export class TopicEditComponent implements OnInit {
   }
 
   save() {
-    this.topic.name = this.topicName;
+    const urls = [
+      this.exampleURL1,
+      this.exampleURL2,
+      this.exampleURL3
+    ];
+    if (this.topic) {
+      this.topic.name = this.topicName;
+      this.topic.urls = urls;
+
+    } else {
+      this.topic = this.topicService.addTopic(this.topicName, urls);
+    }
     this.gotoTopics();
   }
 
