@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowComponent } from './how/how.component';
-import { DemoComponent } from './demo/demo.component';
 
 import { ScriptService } from './script.service';
 
@@ -22,8 +21,7 @@ import { SlickModule } from 'ngx-slick';
     declarations: [
         HomeComponent,
         AboutUsComponent,
-        HowComponent,
-        DemoComponent
+        HowComponent
     ],
     providers: [ScriptService]
 })

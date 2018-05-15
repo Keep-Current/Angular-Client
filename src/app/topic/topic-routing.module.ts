@@ -7,9 +7,9 @@ import { TopicEditComponent } from './topic-edit/topic-edit.component';
 import { TopicDetailComponent } from './topic-detail/topic-detail.component';
 import { TopicCenterComponent } from './topic-center.component';
 
-import { RecommendationComponent } from './recommendation/recommendation.component';
 import { SavedDocumentsComponent } from './saved-documents/saved-documents.component';
-import { DocumentComponent } from './document/document.component';
+import { RecommendationListComponent } from './recommendation-list/recommendation-list.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
 
 const topicRoutes: Routes = [
     {
@@ -28,16 +28,16 @@ const topicRoutes: Routes = [
                             { path: 'edit', component: TopicEditComponent },
                             {
                                 path: '',
-                                component: RecommendationComponent,
+                                component: RecommendationListComponent,
                                 children: [
-                                    { path: ':id', component: DocumentComponent },
-                                    { path: '', component: RecommendationComponent }
+                                    { path: ':id', component: RecommendationComponent },
+                                    { path: '', component: RecommendationListComponent }
                                 ]
                             },
                             {
                                 path: 'saved', component: SavedDocumentsComponent,
                                 children: [
-                                    { path: ':id', component: DocumentComponent },
+                                    { path: ':id', component: RecommendationListComponent },
                                     { path: '', component: SavedDocumentsComponent }
                                 ]
                             }

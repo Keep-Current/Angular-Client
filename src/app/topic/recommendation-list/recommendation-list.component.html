@@ -1,0 +1,5 @@
+<div class="recommendation-container" *ngFor="let recommendation of recommendations$ | async">
+ <app-recommendation [recommendation]="recommendation"></app-recommendation>
+ <hr />
+ </div>
+

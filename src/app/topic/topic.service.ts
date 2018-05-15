@@ -10,8 +10,9 @@ export class Topic {
     public id: number = -1) { }
 }
 
+// ToDo: retrieve it from the DB
 const TOPICS = [
-  new Topic('Semantic Representation', [], 1)
+  new Topic('Natural Language Processing - Chat Bots', [], 1)
 ];
 
 import { Injectable } from '@angular/core';

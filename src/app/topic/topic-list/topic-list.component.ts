@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Topic, TopicService } from '../topic.service';
+
 import { Observable, pipe } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 

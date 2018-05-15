@@ -1,0 +1,33 @@
+.fa-smile-o {
+    color: #42B24A;
+}
+
+.fa-meh-o.positive {
+    color: #91FF99;
+}
+
+.fa-meh-o.negative {
+    color: #FF91BA;
+}
+
+.fa-frown-o {
+    color: #E87C78;
+}
+
+.recommendation-rating {
+    margin-top: 2rem;
+    
+}
+.recommendation-rating i {
+    margin-right: 10px;
+}
+
+cite {
+    font-size: smaller;
+}
+
+section.recommendation-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}

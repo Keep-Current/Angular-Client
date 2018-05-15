@@ -1,0 +1,11 @@
+ul.items {
+    list-style-type: none;
+}
+ul.items li:before {
+    content: "▶";
+    width: 1em !important;
+    margin-left: -1em;
+    display: inline-block;
+    color: #FF91BA;
+    font-family: 'Courier New', Courier, monospace;
+}

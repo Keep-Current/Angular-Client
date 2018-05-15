@@ -4,7 +4,7 @@
           <li *ngFor="let topic of topics$ | async"
             [class.selected]="topic.id === selectedId">
             <a [routerLink]="['/topic', topic.id]">
-              <span class="badge">{{ topic.id }}</span>{{ topic.name }}
+              {{ topic.name }}
             </a>
           </li>
         </ul>

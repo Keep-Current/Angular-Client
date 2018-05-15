@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { TopicComponent } from './topic.component';
 import { TopicService } from './topic.service';
+import { RecommendationListService } from './recommendation-list/recommendation-list.service';
 
 import { TopicEditComponent } from './topic-edit/topic-edit.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
@@ -11,8 +12,8 @@ import { TopicDetailComponent } from './topic-detail/topic-detail.component';
 import { TopicCenterComponent } from './topic-center.component';
 
 import { RecommendationComponent } from './recommendation/recommendation.component';
+import { RecommendationListComponent } from './recommendation-list/recommendation-list.component';
 import { SavedDocumentsComponent } from './saved-documents/saved-documents.component';
-import { DocumentComponent } from './document/document.component';
 
 
 import { TopicRoutingModule } from './topic-routing.module';
@@ -30,9 +31,9 @@ import { TopicRoutingModule } from './topic-routing.module';
     TopicDetailComponent,
     RecommendationComponent,
     SavedDocumentsComponent,
-    DocumentComponent,
+    RecommendationListComponent,
     TopicCenterComponent
   ],
-  providers: [TopicService]
+  providers: [TopicService, RecommendationListService]
 })
 export class TopicModule { }
