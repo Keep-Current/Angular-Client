@@ -13,6 +13,8 @@ This repository includes the GUI part of the Keep-Current project: An app where 
 
 For more information about Keep-Current project, please refer to [the main repository](https://github.com/Keep-Current/Keep-Current/).
 
+we use [Slack](https://keep-current.slack.com) as our communication channel. If you're new, you can join using [this link](https://join.slack.com/t/keep-current/shared_invite/enQtMzY4MTA0OTQ0NTAzLTcxY2U5NmIwNmM0NmU2MmMyMWQ0YTIyMTg4MWRjMWUyYmVlNWQxMzU3ZWJlNjM4NzVmNTFhM2FjYjkzZDU3YWM ).
+
 ## How you can help
 
 We welcome anyone who would like to join and contribute! We meet regularly every month in Vienna through the Data Science Cafe meetup of the VDSG, show our progress and discuss the next steps.
