@@ -1,6 +1,6 @@
 <article>
   <h4 class="display-5">{{ recommendation.title }}</h4>
-  <cite>{{ recommendation.authors }}</cite>
+  <cite>{{ recommendation.authors.join(', ') }}</cite>
   <section class="recommendation-content">
     {{ recommendation.content }}
   </section>

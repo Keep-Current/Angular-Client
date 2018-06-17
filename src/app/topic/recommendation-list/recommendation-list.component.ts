@@ -15,7 +15,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class RecommendationListComponent implements OnInit {
 
-  recommendations$: Observable<Recommendation[]>;
+  recommendations$: Recommendation[];
   selectedId: number;
 
   constructor(
@@ -24,14 +24,21 @@ export class RecommendationListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const routeParmaPipe = pipe(
-      switchMap((params: ParamMap) => {
-        this.selectedId = +params.get('id');
-        return this.service.getRecommendations();
-      })
-    );
+    // const routeParmaPipe = pipe(
+    //   switchMap((params: ParamMap) => {
+    //     this.selectedId = +params.get('id');
+    //     return this.service.getRecommendations();
+    //   })
+    // );
 
-    this.recommendations$ = routeParmaPipe(this.route.paramMap);
+    // this.recommendations$ = routeParmaPipe(this.route.paramMap);
+    this.getRecommendations();
   }
+
+  getRecommendations(): void {
+    this.service.getRecommendations()
+    .subscribe(recommendations => this.recommendations$ = recommendations);
+  }
+
 
 }
