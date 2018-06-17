@@ -12,7 +12,7 @@ export class Topic {
 
 // ToDo: retrieve it from the DB
 const TOPICS = [
-  new Topic('Natural Language Processing - Chat Bots', [], 1)
+  new Topic('Reasoning & Rationalizing Models', [], 1)
 ];
 
 import { Injectable } from '@angular/core';

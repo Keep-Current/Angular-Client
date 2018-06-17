@@ -1,8 +1,11 @@
 
 
 import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Recommendation } from '../recommendation/recommendation.class';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const RECOMMENDATIONS = [
   new Recommendation(1,
@@ -34,17 +37,23 @@ const RECOMMENDATIONS = [
 @Injectable()
 export class RecommendationListService {
 
+  private similarDocsUrl = 'https://keepcurrentengine.herokuapp.com/find_similar';  // URL to web api
+
   private recommendations$: BehaviorSubject<Recommendation[]> =
    new BehaviorSubject<Recommendation[]>(RECOMMENDATIONS);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getRecommendations() {
-    return this.recommendations$;
+  getRecommendations():Observable<Recommendation[]> {
+    return this.http.get<Recommendation[]>(this.similarDocsUrl);
   }
 
   getRecommendation(recommendationId: number): Recommendation {
     return RECOMMENDATIONS[recommendationId];
   }
+
+  // private log(message: string) {
+  //   this.messageService.add('RecommendationListService: ' + message);
+  // }
 
 }

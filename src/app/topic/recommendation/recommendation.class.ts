@@ -4,5 +4,6 @@ export class Recommendation {
         public title: string,
         public content: string,
         public authors: Array<string> = [],
-        public url: string = '') { }
+        public url: string = '',
+        public similarityScore: Array<string> = []) { }
 }
