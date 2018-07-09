@@ -30,6 +30,9 @@
     font-style: normal;
     line-height: 1.5;  
     font-size: 1rem;
+
+    padding-top: 100px; 
+
   }
   
   section,
@@ -317,4 +320,8 @@ nav .mbr-section-btn {
   background-color: $cyan;
   border-color: $cyan;
   color: $white;
+}
+
+.bg-light {
+  background-color: #fff !important;
 }
