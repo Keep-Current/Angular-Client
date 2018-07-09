@@ -15,7 +15,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class RecommendationListComponent implements OnInit {
 
-  recommendations$: Recommendation[];
+  recommendations: Recommendation[];
   selectedId: number;
 
   constructor(
@@ -37,7 +37,7 @@ export class RecommendationListComponent implements OnInit {
 
   getRecommendations(): void {
     this.service.getRecommendations()
-    .subscribe(recommendations => this.recommendations$ = recommendations);
+    .subscribe(recommendations => this.recommendations = recommendations);
   }
 
 

@@ -12,7 +12,9 @@ export class RecommendationListService {
   // private recommendations$: BehaviorSubject<Recommendation[]> =
   // new BehaviorSubject<Recommendation[]>(RECOMMENDATIONS);
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getRecommendations(): Observable<Recommendation[]> {
     return this.http.get<Recommendation[]>(this.similarDocsUrl);
