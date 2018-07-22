@@ -1,6 +1,7 @@
 # KeepCurrent - UI/UX and User Space
 
 <!-- Badges section here. -->
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f9357f2830504c5f85067e953bf9ce42)](https://app.codacy.com/app/Keep-Current/WebApp?utm_source=github.com&utm_medium=referral&utm_content=Keep-Current/WebApp&utm_campaign=badger)
 [![BCH compliance](https://bettercodehub.com/edge/badge/Keep-Current/WebApp?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/Keep-Current/WebApp.svg?branch=master)](https://travis-ci.org/Keep-Current/WebApp)
 [![Dependency Status][david-badge]][david-badge-url]
