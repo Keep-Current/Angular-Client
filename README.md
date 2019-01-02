@@ -5,6 +5,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/Keep-Current/WebApp?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/Keep-Current/WebApp.svg?branch=master)](https://travis-ci.org/Keep-Current/WebApp)
 [![Dependency Status][david-badge]][david-badge-url]
+[![codebeat badge](https://codebeat.co/badges/6f94d3c0-8307-4b22-aa52-26a5684a47f9)](https://codebeat.co/projects/github-com-keep-current-webapp-master)
 
 ## What is Keep-Current
 
